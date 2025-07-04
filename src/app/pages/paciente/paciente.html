@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="container py-5">
+  <div class="card shadow p-4">
+    <h3 class="text-center mb-4">Registro paciente</h3>
+
+    <form (ngSubmit)="guardarPaciente()">
+
+      <div class="mb-3">
+        <label>Nombre del paciente</label>
+        <input type="text" class="form-control" [(ngModel)]="paciente.nombrePaciente" name="nombrePaciente" required>
+      </div>
+
+      <button class="btn btn-success w-100">
+        <i class="bi bi-calendar-check-fill me-2">Guardar Paciente</i>
+      </button>
+    </form>
+  </div>
+</div>

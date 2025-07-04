@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="container py-5">
+  <div class="card shadow p-4">
+    <h3 class="text-center mb-4">Registro pago</h3>
+
+    <form (ngSubmit)="guardarPago()">
+
+      <div class="mb-3">
+        <label>Tipo de servicio</label>
+        <input type="text" class="form-control" [(ngModel)]="pago.tipoServicio" name="tipoServicio" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Fecha de pago</label>
+        <input type="text" class="form-control" [(ngModel)]="pago.fechaPago" name="fechaPago" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Total pago</label>
+        <input type="text" class="form-control" [(ngModel)]="pago.totalPago" name="totalPago" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Forma de pago</label>
+        <input type="text" class="form-control" [(ngModel)]="pago.formaPago" name="formaPago" required>
+      </div>
+
+      <button class="btn btn-success w-100">
+        <i class="bi bi-calendar-check-fill me-2">Guardar Pago</i>
+      </button>
+    </form>
+  </div>
+</div>

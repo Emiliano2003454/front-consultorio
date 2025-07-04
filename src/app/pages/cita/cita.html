@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="container py-5">
+  <div class="card shadow p-4">
+    <h3 class="text-center mb-4">Registro Cita</h3>
+
+    <form (ngSubmit)="guardarCita()">
+      <div class="mb-3">
+        <label>ID de Cita</label>
+        <input type="number" class="form-control" [(ngModel)]="cita.idCita" name="idCita" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Nombre del Paciente</label>
+        <input type="text" class="form-control" [(ngModel)]="cita.nombrePaciente" name="nombrePaciente" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Tipo de Especialidad</label>
+        <select class="form-select" [(ngModel)]="cita.tipoEspecialidad" name="tipoEspecialidad" required>
+          <option value="" disabled selected>Seleccione una especialidad</option>
+          <option>Odontología</option>
+          <option>Cardiología</option>
+          <option>Medicina General</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Número de Consultorio</label>
+        <input type="number" class="form-control" [(ngModel)]="cita.numeroDeConsultorio" name="numeroDeConsultorio" required>
+      </div>
+
+      <div class="mb-4">
+        <label>Fecha y Hora</label>
+        <input type="datetime-local" class="form-control" [(ngModel)]="cita.fechaHora" name="fechaHora" required>
+      </div>
+
+      <button class="btn btn-success w-100">
+        <i class="bi bi-calendar-check-fill me-2"></i>Guardar Cita
+      </button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="container py-5">
+  <div class="card shadow p-4">
+    <h3 class="text-center mb-4">Registro doctor</h3>
+
+    <form (ngSubmit)="guardarDoctor()">
+
+      <div class="mb-3">
+        <label>Nombre del doctor</label>
+        <input type="text" class="form-control" [(ngModel)]="doctor.nombreDoctor" name="nombreDoctor" required>
+      </div>
+
+      <div class="mb-3">
+        <label>Tipo de Especialidad</label>
+        <select class="form-select" [(ngModel)]="doctor.tipoEspecialidad" name="tipoEspecialidad" required>
+          <option value="" disabled selected>Seleccione una especialidad</option>
+          <option>Odontología</option>
+          <option>Cardiología</option>
+          <option>Medicina General</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Numero de cedula</label>
+        <input type="text" class="form-control" [(ngModel)]="doctor.numeroDeCedula" name="numeroDeCedula" required>
+      </div>
+      <div class="mb-3">
+        <label>Telefono</label>
+        <input type="text" class="form-control" [(ngModel)]="doctor.telefono" name="telefono" required>
+      </div>
+      <div class="mb-3">
+        <label>Correo electronico</label>
+        <input type="text" class="form-control" [(ngModel)]="doctor.correo" name="correo" required>
+      </div>
+
+      <button class="btn btn-success w-100">
+        <i class="bi bi-calendar-check-fill me-2">Guardar Doctor</i>
+      </button>
+    </form>
+  </div>
+</div>

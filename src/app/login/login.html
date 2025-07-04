@@ -1,0 +1,43 @@
+<router-outlet></router-outlet>
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card shadow p-4" style="width: 360px; border-radius: 1rem;">
+    <h3 class="text-center mb-4 text-primary">
+      <i class="bi bi-person-circle me-2"></i>
+      {{ isRegisterMode ? 'Crear Cuenta' : 'Iniciar Sesión' }}
+    </h3>
+
+    <form (ngSubmit)="isRegisterMode ? registrarUsuario() : iniciaSesion()">
+      <div class="mb-3 input-group">
+        <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+        <input type="text" class="form-control" placeholder="Nombre de usuario"
+          [(ngModel)]="username" name="username" required>
+      </div>
+
+       <div class="mb-4 input-group">
+        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+        <input type="password" class="form-control" placeholder="Contraseña"
+          [(ngModel)]="password" name="password" required>
+      </div>
+
+      <div *ngIf="isRegisterMode" class="mb-3 input-group">
+        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+        <input type="tipoLogin" class="form-control" placeholder="TipoLogin"
+          [(ngModel)]="tipoLogin" name="tipoLogin">
+      </div>
+
+      <div *ngIf="isRegisterMode" class="mb-3 input-group">
+        <span class="input-group-text"><i class="bi bi-phone-fill"></i></span>
+        <input type="nombreLogin" class="form-control" placeholder="NombreLogin"
+          [(ngModel)]="nombreLogin" name="nombreLogin">
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 mb-2">
+        {{ isRegisterMode ? 'Registrarse' : 'Entrar' }}
+      </button>
+
+      <button type="button" class="btn btn-outline-secondary w-100" (click)="toggleMode()">
+        {{ isRegisterMode ? '¿Ya tienes cuenta? Inicia sesión' : '¿No tienes cuenta? Regístrate' }}
+      </button>
+    </form>
+  </div>
+</div>
